@@ -21,9 +21,10 @@ spring:
     redis:
       host: ${REDIS_HOST}
       port: 6379
-  jpa:
-    hibernate:
-      ddl-auto: create
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
 server:
   port: 8080
 
@@ -32,3 +33,6 @@ jwt:
   access-token-expiration: 172800000
   refresh-token-expiration: 604800000
 
+ocr:
+  space:
+    api-key: K82594601888957
