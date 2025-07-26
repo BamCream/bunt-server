@@ -41,7 +41,8 @@ class SecurityConfig(
                     .requestMatchers(HttpMethod.POST, "/file/**").authenticated()
                     .requestMatchers(HttpMethod.GET, "/record/**").permitAll()
                     .requestMatchers(HttpMethod.POST, "/ocr/**").permitAll()
-                    .requestMatchers(HttpMethod.GET, "/api/**").permitAll()
+                    .requestMatchers(HttpMethod.GET, "/dict/**").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/dict/**").authenticated()
                     .anyRequest().authenticated()
             }
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter::class.java)
