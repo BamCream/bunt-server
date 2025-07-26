@@ -1,6 +1,5 @@
 package com.server.uthonserver2025_1.domain.post.domain.entity
 
-import com.server.uthonserver2025_1.domain.tag.domain.entity.TagEntity
 import com.server.uthonserver2025_1.global.common.entity.BaseTimeEntity
 import jakarta.persistence.*
 
