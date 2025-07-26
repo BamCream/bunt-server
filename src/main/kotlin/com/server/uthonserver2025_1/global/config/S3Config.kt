@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 class S3Config {
-
     @Value("\${cloud.aws.credentials.access-key}")
     private lateinit var accessKey: String
     @Value("\${cloud.aws.credentials.secret-key}")
