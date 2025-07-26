@@ -12,7 +12,6 @@ import java.io.IOException
 
 @Component
 class CustomAuthenticationDenyHandler : AccessDeniedHandler {
-
     @Throws(IOException::class, ServletException::class)
     override fun handle(
         request: HttpServletRequest,
