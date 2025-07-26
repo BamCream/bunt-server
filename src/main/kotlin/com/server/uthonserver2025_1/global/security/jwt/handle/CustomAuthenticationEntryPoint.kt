@@ -26,7 +26,8 @@ class CustomAuthenticationEntryPoint : AuthenticationEntryPoint {
                 "message": "Need Account",
                 "path": "${request.requestURI}"
             }
-        """.trimIndent()
+        """
+            .trimIndent()
 
         response.writer.write(jsonResponse)
         response.writer.flush()
