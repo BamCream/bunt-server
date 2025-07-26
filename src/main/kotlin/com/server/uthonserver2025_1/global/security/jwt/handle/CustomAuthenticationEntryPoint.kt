@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component
 
 @Component
 class CustomAuthenticationEntryPoint : AuthenticationEntryPoint {
-
     override fun commence(
         request: HttpServletRequest,
         response: HttpServletResponse,
@@ -27,7 +26,8 @@ class CustomAuthenticationEntryPoint : AuthenticationEntryPoint {
                 "message": "Need Account",
                 "path": "${request.requestURI}"
             }
-        """.trimIndent()
+        """
+            .trimIndent()
 
         response.writer.write(jsonResponse)
         response.writer.flush()

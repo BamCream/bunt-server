@@ -20,6 +20,10 @@ class SwaggerConfig {
                 Server()
                     .url("http://localhost:8080")
                     .description("Development Server")
+                    ,
+                Server()
+                    .url("http://3.39.1.59:8080")
+                    .description("Product Server")
             )
             )
             .addSecurityItem(SecurityRequirement().addList("Authorization"))
