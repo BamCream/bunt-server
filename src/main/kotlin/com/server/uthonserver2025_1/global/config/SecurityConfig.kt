@@ -36,7 +36,7 @@ class SecurityConfig(
                 it
                     .requestMatchers(HttpMethod.GET, "/swagger-ui.html", "/swagger-ui/**", "/webjars/swagger-ui/index.html", "/v3/api-docs/**").permitAll()
                     .requestMatchers(HttpMethod.POST, "/auth/signup", "/auth/login").permitAll()
-                    .anyRequest().permitAll()
+                    .anyRequest().anonymous()
             }
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter::class.java)
 
