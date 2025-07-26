@@ -3,7 +3,7 @@ spring:
     name: 2025UthonServer
   sql:
     init:
-      mode: embedded
+      mode: always
   datasource:
     url: ${DB_URL}
     username: ${DB_USER}
