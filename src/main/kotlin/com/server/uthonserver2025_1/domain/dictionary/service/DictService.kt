@@ -24,8 +24,6 @@ class DictService(
 
     fun unlockDict(request: UnlockDictRequest): Boolean {
         val dict: DictEntity = dictRepository.findById(request.dictId).get()
-        val isMatch = dict.serials.stream().anyMatch { it == request.serial }
-        if (isMatch) {
             dictRepository.save(
                 DictEntity(
                     id = dict.id,
@@ -37,8 +35,6 @@ class DictService(
                 )
             )
             return true
-        }
-        return false
     }
 
     fun getAllDict(): List<DictEntity> {
