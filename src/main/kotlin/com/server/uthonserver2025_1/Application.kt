@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 @SpringBootApplication
 @ConfigurationPropertiesScan
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = ["com.server.uthonserver2025_1.domain.user.domain.repository"])
+@EnableJpaRepositories
 class Application
 
 fun main(args: Array<String>) {
