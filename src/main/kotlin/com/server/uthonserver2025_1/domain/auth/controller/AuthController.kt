@@ -24,5 +24,4 @@ class AuthController(
     @Operation(summary = "로그인")
     @PostMapping("/login")
     fun login(@RequestBody @Valid request: LoginRequest) = authService.login(request)
-
 }
