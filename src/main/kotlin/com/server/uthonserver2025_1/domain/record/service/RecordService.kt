@@ -14,7 +14,6 @@ class RecordService(
 ) {
     fun getAll(): AllRecords {
         return AllRecords(
-            recordRepository.findAll(),
             recordRepository.findAll().size,
             recordRepository.findAll().count { it.result == GameResult.WIN },
             recordRepository.findAll().count { it.result == GameResult.DRAW },
