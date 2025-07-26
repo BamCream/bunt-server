@@ -6,10 +6,7 @@ import com.server.uthonserver2025_1.domain.post.service.PostService
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/posts")
@@ -21,5 +18,17 @@ class PostController(
     @Operation(summary = "create a new post")
     fun createPost(@RequestBody request: PostRequest): ResponseEntity<PostEntity> {
         return ResponseEntity.ok(postService.createPost(request))
+    }
+
+    @GetMapping("/{postId}")
+    @Operation(summary = "get post")
+    fun getPost(@PathVariable postId: Long): ResponseEntity<PostEntity> {
+        return ResponseEntity.ok(postService.getPost(postId))
+    }
+
+    @GetMapping
+    @Operation(summary = "get all posts")
+    fun getAllPosts(): ResponseEntity<List<PostEntity>> {
+        return ResponseEntity.ok(postService.getAllPosts())
     }
 }

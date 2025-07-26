@@ -28,4 +28,12 @@ class PostService(
             )
         )
     }
+
+    fun getPost(postId: Long): PostEntity {
+        return postRepository.findById(postId).get()
+    }
+
+    fun getAllPosts(): List<PostEntity> {
+        return postRepository.findAll().toList()
+    }
 }
