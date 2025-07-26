@@ -1,6 +1,6 @@
 package com.server.uthonserver2025_1.domain.record.controller
 
-import com.server.uthonserver2025_1.domain.user.service.RecordService
+import com.server.uthonserver2025_1.domain.record.service.RecordService
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.web.bind.annotation.GetMapping
@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RestController
 class RecordController(
     val recordService: RecordService
 ) {
+    @GetMapping
+    @Operation(summary = "짬뽕")
+    fun getRecords() = recordService.getAll()
+
     @Operation(summary = "모든 경기 리스트 조회")
     @GetMapping("/all")
     fun getAllRecords() = recordService.getAllRecords()
