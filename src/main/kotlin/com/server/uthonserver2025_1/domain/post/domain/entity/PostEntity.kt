@@ -15,8 +15,7 @@ data class PostEntity(
     val content: String = "",
     val imageUrl: String = "",
     val authorId: Long = 0L,
-    @ManyToMany
-    @JoinTable(name = "tags")
-    val tags: List<TagEntity> = listOf(),
+    @ElementCollection
+    val tags: List<String> = listOf(),
 
     ): BaseTimeEntity()

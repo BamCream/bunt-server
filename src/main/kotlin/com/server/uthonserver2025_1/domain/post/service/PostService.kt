@@ -24,7 +24,7 @@ class PostService(
                 content = request.content,
                 imageUrl = request.imageUrl,
                 authorId = securityHolder.getPrincipal()!!.id!!,
-                tags = request.tags.stream().map { it -> tagService.registerTag(it) }.toList()
+                tags = request.tags
             )
         )
     }
