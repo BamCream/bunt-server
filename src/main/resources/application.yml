@@ -9,6 +9,10 @@ spring:
     username: ${DB_USER}
     password: ${DB_PW}
     driver-class-name: org.postgresql.Driver
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: 6379
   jpa:
     hibernate:
       ddl-auto: create
@@ -17,13 +21,6 @@ spring:
       hibernate:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-  data:
-    redis:
-      host: ${REDIS_HOST}
-      port: 6379
-  jpa:
-    hibernate:
-      ddl-auto: create
 server:
   port: 8080
 
