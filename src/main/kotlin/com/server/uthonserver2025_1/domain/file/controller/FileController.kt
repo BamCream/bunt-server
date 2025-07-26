@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile
 
 @RestController
 @RequestMapping("/file")
-@Tag(name = "File")
+@Tag(name = "File API")
 class FileController(
     private val fileService: FileService
 ) {

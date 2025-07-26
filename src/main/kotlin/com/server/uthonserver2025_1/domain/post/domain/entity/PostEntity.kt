@@ -19,5 +19,4 @@ data class PostEntity(
     @ManyToMany
     @JoinTable(name = "tags")
     val tags: List<TagEntity> = listOf(),
-
     ): BaseTimeEntity()
