@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile
 @Service
 class FileServiceImpl(
     val amazonS3Client: AmazonS3Client,
-    @Value("\${cloud.aws.s3.bucket}")
+    @Value("\${cloud.aws.bucket}")
     val bucket: String
 ): FileService {
     override fun uploadFile(file: MultipartFile): String {
