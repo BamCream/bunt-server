@@ -10,6 +10,7 @@ class RefreshTokenRepositoryImpl(
     private val jwtProperties: JwtProperties,
     private val redisTemplate: RedisTemplate<String, String>
 ) : RefreshTokenRepository {
+
     override fun save(username: String, refreshToken: String) {
         val key = "refreshToken:$username"
         redisTemplate.opsForValue()
