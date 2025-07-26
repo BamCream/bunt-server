@@ -22,8 +22,8 @@ class DictController(
 
     @PutMapping
     @Operation(summary = "update status")
-    fun unlockDictionary(@RequestBody request: UnlockDictRequest) {
-        dictService.unlockDict(request)
+    fun unlockDictionary(@RequestBody request: UnlockDictRequest): Boolean {
+        return dictService.unlockDict(request)
     }
 
     @GetMapping

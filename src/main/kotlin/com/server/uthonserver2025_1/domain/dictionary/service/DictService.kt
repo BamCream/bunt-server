@@ -22,18 +22,23 @@ class DictService(
         )
     }
 
-    fun unlockDict(request: UnlockDictRequest) {
+    fun unlockDict(request: UnlockDictRequest): Boolean {
         val dict: DictEntity = dictRepository.findById(request.dictId).get()
-        dictRepository.save(
-            DictEntity(
-                id = dict.id,
-                productUrl = dict.productUrl,
-                productImage = dict.productImage,
-                productName = dict.productName,
-                serials = dict.serials,
-                isUnlocked = DictStatus.UNLOCKED
+        val isMatch = dict.serials.stream().anyMatch { it == request.serial }
+        if (isMatch) {
+            dictRepository.save(
+                DictEntity(
+                    id = dict.id,
+                    productUrl = dict.productUrl,
+                    productImage = dict.productImage,
+                    productName = dict.productName,
+                    serials = dict.serials,
+                    isUnlocked = DictStatus.UNLOCKED
+                )
             )
-        )
+            return true
+        }
+        return false
     }
 
     fun getAllDict(): List<DictEntity> {
