@@ -21,6 +21,9 @@ spring:
     redis:
       host: ${REDIS_HOST}
       port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: create
 server:
   port: 8080
 
