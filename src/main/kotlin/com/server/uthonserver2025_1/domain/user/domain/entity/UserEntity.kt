@@ -4,11 +4,9 @@ import com.server.uthonserver2025_1.domain.user.domain.enums.UserRole
 import jakarta.persistence.*
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
-import org.springframework.data.jpa.domain.support.AuditingEntityListener
 import java.time.LocalDateTime
 
 @Entity
-@EntityListeners(AuditingEntityListener::class)
 @Table(name = "users")
 data class UserEntity (
 
