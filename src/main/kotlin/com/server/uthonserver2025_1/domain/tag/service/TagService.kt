@@ -1,15 +1,15 @@
 package com.server.uthonserver2025_1.domain.tag.service
 
 import com.server.uthonserver2025_1.domain.post.domain.entity.PostEntity
-import com.server.uthonserver2025_1.domain.post.domain.enums.PostError
 import com.server.uthonserver2025_1.domain.post.domain.repository.PostRepository
 import com.server.uthonserver2025_1.domain.tag.domain.entity.TagEntity
 import com.server.uthonserver2025_1.domain.tag.domain.repository.TagRepository
 import com.server.uthonserver2025_1.domain.tag.dto.request.TagRequest
-import com.server.uthonserver2025_1.global.exception.CustomException
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
+@Transactional
 class TagService(
     private val tagRepository: TagRepository,
     private val postRepository: PostRepository,

@@ -11,9 +11,11 @@ import com.server.uthonserver2025_1.global.security.jwt.provider.Jwt
 import com.server.uthonserver2025_1.global.security.jwt.provider.JwtProvider
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import java.time.LocalDateTime
 
 @Service
+@Transactional
 class AuthService(
     private val userRepository: UserRepository,
     private val refreshTokenRepository: RefreshTokenRepository,

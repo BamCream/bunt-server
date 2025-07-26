@@ -7,9 +7,11 @@ import com.server.uthonserver2025_1.domain.file.service.FileService
 import com.server.uthonserver2025_1.global.exception.CustomException
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
 
 @Service
+@Transactional
 class FileServiceImpl(
     val amazonS3Client: AmazonS3Client,
     @Value("\${cloud.aws.bucket}")

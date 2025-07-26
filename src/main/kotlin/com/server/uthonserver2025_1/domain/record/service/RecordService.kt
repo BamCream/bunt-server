@@ -5,8 +5,10 @@ import com.server.uthonserver2025_1.domain.record.domain.enums.GameResult
 import com.server.uthonserver2025_1.domain.record.domain.repository.RecordRepository
 import com.server.uthonserver2025_1.domain.record.dto.response.AllRecords
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
+@Transactional
 class RecordService(
     private val recordRepository: RecordRepository
 ) {

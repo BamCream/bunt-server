@@ -36,7 +36,12 @@ class SecurityConfig(
                 it
                     .requestMatchers(HttpMethod.GET, "/swagger-ui.html", "/swagger-ui/**", "/webjars/swagger-ui/index.html", "/v3/api-docs/**").permitAll()
                     .requestMatchers(HttpMethod.POST, "/auth/signup", "/auth/login").permitAll()
-                    .anyRequest().anonymous()
+                    .requestMatchers(HttpMethod.GET, "/posts/**").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/posts/**").authenticated()
+                    .requestMatchers(HttpMethod.POST, "/file/**").authenticated()
+                    .requestMatchers(HttpMethod.GET, "/record/**").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/ocr/**").permitAll()
+                    .anyRequest().authenticated()
             }
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter::class.java)
 
