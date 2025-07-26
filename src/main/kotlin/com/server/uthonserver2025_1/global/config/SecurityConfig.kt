@@ -43,6 +43,7 @@ class SecurityConfig(
                     .requestMatchers(HttpMethod.POST, "/ocr/**").permitAll()
                     .requestMatchers(HttpMethod.GET, "/dict/**").permitAll()
                     .requestMatchers(HttpMethod.POST, "/dict/**").authenticated()
+                    .requestMatchers(HttpMethod.PUT, "/dict/**").authenticated()
                     .anyRequest().authenticated()
             }
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter::class.java)
