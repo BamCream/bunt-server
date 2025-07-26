@@ -55,6 +55,8 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+    implementation("com.google.cloud:google-cloud-vision:3.31.0")
 }
 
 kotlin {
