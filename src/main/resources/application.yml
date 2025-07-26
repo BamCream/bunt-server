@@ -29,3 +29,12 @@ jwt:
   access-token-expiration: 172800000
   refresh-token-expiration: 604800000
 
+cloud:
+  aws:
+    s3:
+      bucket: ${AWS_S3_BUCKET}
+    stack.auto: false
+    region.static: ap-northeast-2
+    credentials:
+      accessKey: ${AWS_S3_ACCESS_KEY_ID}
+      secretKey: ${AWS_S3_SECRET_ACCESS_KEY}
