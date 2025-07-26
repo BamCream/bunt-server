@@ -25,4 +25,5 @@ data class UserEntity (
 
     @LastModifiedDate
     val updatedAt: LocalDateTime = LocalDateTime.now()
+
 )
