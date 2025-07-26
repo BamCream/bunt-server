@@ -13,12 +13,12 @@ class SecurityHolderImpl(
     override fun getPrincipal(): UserEntity? {
         val authentication = SecurityContextHolder.getContext().authentication ?: return null
         val principal = authentication.principal
-        val email = when (principal) {
+        val username = when (principal) {
             is String -> principal
             is org.springframework.security.core.userdetails.UserDetails -> principal.username
             else -> null
         } ?: return null
 
-        return userRepository.findByEmail(email)
+        return userRepository.findByUsername(username)
     }
 }

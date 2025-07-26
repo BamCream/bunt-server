@@ -9,5 +9,5 @@ enum class AuthError(
 ) : CustomError {
     PASSWORD_WRONG(HttpStatus.BAD_REQUEST, "Password does not match request"),
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "User not found"),
-    EMAIL_ALREADY_IN_USE(HttpStatus.FORBIDDEN, "Email already in use"),
+    USERNAME_ALREADY_IN_USE(HttpStatus.FORBIDDEN, "Username already in use"),
 }

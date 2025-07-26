@@ -16,7 +16,6 @@ data class UserEntity (
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private val id: Long? = null,
     val username: String = "",
-    val email: String = "",
     val password: String = "",
     val role: UserRole = UserRole.ROLE_USER,
     val lastLoginAt: LocalDateTime? = null,

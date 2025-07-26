@@ -11,25 +11,25 @@ class RefreshTokenRepositoryImpl(
     private val redisTemplate: RedisTemplate<String, String>
 ) : RefreshTokenRepository {
 
-    override fun save(email: String, refreshToken: String) {
-        val key = "refreshToken:$email"
+    override fun save(username: String, refreshToken: String) {
+        val key = "refreshToken:$username"
         redisTemplate.opsForValue()
             .set(key, refreshToken, Duration.ofMillis(jwtProperties.refreshTokenExpiration))
     }
 
-    override fun findByEmail(email: String): String? {
-        val key = "refreshToken:$email"
+    override fun findByUsername(username: String): String? {
+        val key = "refreshToken:$username"
         return redisTemplate.opsForValue().get(key)
     }
 
-    override fun deleteByEmail(email: String): Boolean {
-        val key = "refreshToken:$email"
+    override fun deleteByUsername(username: String): Boolean {
+        val key = "refreshToken:$username"
         return redisTemplate.delete(key)
     }
 
 
-    override fun existsByEmail(email: String): Boolean {
-        val key = "refreshToken:$email"
+    override fun existsByUsername(username: String): Boolean {
+        val key = "refreshToken:$username"
         return redisTemplate.hasKey(key)
     }
 }

@@ -10,7 +10,7 @@ class CustomUserDetails(
 ) : UserDetails {
 
     override fun getUsername(): String {
-        return user.email
+        return user.username
     }
 
     override fun getPassword(): String {
